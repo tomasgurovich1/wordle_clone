@@ -74,6 +74,7 @@ function checkGuess() {
 
   if (!WORDS.includes(guessString)) {
     toastr.error("Esa palabra no existe!");
+    mixpanel.track('Unkown Word Entered');
     return;
   }
 
@@ -115,6 +116,10 @@ function checkGuess() {
 
   if (guessString === rightGuessString) {
     toastr.success("Ganaste! Dale Campeón!");
+    mixpanel.track('Entered Right Word', {
+    'Winning Word': rightGuessString,
+    'Number of Tries Needed': 6 - guessesRemaining,
+     });
     guessesRemaining = 0;
     return;
   } else {
@@ -124,6 +129,9 @@ function checkGuess() {
 
     if (guessesRemaining === 0) {
       toastr.error("Te quedaste sin vidas! Alpiste, perdiste!");
+    mixpanel.track('Game Over', {
+    'Winning Word': rightGuessString,
+     });
       toastr.info(`La palabra correcta era: "${rightGuessString}"`);
     }
   }
