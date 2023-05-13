@@ -118,7 +118,7 @@ function checkGuess() {
 
     if (guessesRemaining === 0) {
       toastr.error("Te quedaste sin vidas! Alpiste, perdiste!");
-      toastr.info(`The right word was: "${rightGuessString}"`);
+      toastr.info(`La palabra correcta era: "${rightGuessString}"`);
     }
   }
 }
