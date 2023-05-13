@@ -1,7 +1,7 @@
 import { WORDS } from "./words.js";
 
-import mixpanel from 'mixpanel-browser';
-mixpanel.init('36cb7952913e1e68873dc7c0926589b0', {debug: true}); 
+<!--import mixpanel from 'mixpanel-browser'; -->
+<!-- mixpanel.init('36cb7952913e1e68873dc7c0926589b0', {debug: true}); -->
 
 
 const NUMBER_OF_GUESSES = 6;
