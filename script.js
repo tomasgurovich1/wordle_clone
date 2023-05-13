@@ -1,5 +1,8 @@
 import { WORDS } from "./words.js";
 
+import mixpanel from 'mixpanel-browser';
+mixpanel.init('36cb7952913e1e68873dc7c0926589b0', {debug: true}); 
+
 
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
@@ -64,6 +67,9 @@ function checkGuess() {
 
   if (guessString.length != 5) {
     toastr.error("Te faltan letras!");
+    mixpanel.track('Short Word Entered', {
+  'Guess String Length': guessString.length,
+});
     return;
   }
 
