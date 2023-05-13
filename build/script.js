@@ -62,12 +62,12 @@ function checkGuess() {
   }
 
   if (guessString.length != 5) {
-    toastr.error("Not enough letters!");
+    toastr.error("Te faltan letras!");
     return;
   }
 
   if (!WORDS.includes(guessString)) {
-    toastr.error("Word not in list!");
+    toastr.error("Esa palabra no existe!");
     return;
   }
 
@@ -108,7 +108,7 @@ function checkGuess() {
   }
 
   if (guessString === rightGuessString) {
-    toastr.success("You guessed right! Game over!");
+    toastr.success("Ganaste! Dale Campeón!");
     guessesRemaining = 0;
     return;
   } else {
@@ -117,7 +117,7 @@ function checkGuess() {
     nextLetter = 0;
 
     if (guessesRemaining === 0) {
-      toastr.error("You've run out of guesses! Game over!");
+      toastr.error("Te quedaste sin vidas! Alpiste, perdiste!");
       toastr.info(`The right word was: "${rightGuessString}"`);
     }
   }
