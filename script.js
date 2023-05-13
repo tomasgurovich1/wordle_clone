@@ -67,9 +67,6 @@ function checkGuess() {
 
   if (guessString.length != 5) {
     toastr.error("Te faltan letras!");
-    mixpanel.track('Short Word Entered', {
-  'Guess String Length': guessString.length,
-});
     return;
   }
 
