@@ -1,8 +1,5 @@
 import { WORDS } from "./words.js";
 
-<!--import mixpanel from 'mixpanel-browser'; -->
-<!-- mixpanel.init('36cb7952913e1e68873dc7c0926589b0', {debug: true}); -->
-
 
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
@@ -72,7 +69,6 @@ function checkGuess() {
 
   if (!WORDS.includes(guessString)) {
     toastr.error("Esa palabra no existe!");
-    mixpanel.track('Entered Wrong Word');
     return;
   }
 
